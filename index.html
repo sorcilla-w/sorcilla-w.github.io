@@ -37,10 +37,14 @@ h1 { font-family: 'Cinzel', serif; font-size: 2.4rem; letter-spacing: .15em; col
 .log-tag { display: inline-block; background: rgba(107,53,160,.3); border: 1px solid rgba(107,53,160,.5); border-radius: 4px; font-size: .7rem; padding: 2px 8px; color: #b08ad0; margin-left: 10px; vertical-align: middle; }
 .giscus-wrap { margin-top: 24px; background: rgba(255,255,255,.02); border: 1px solid rgba(201,168,76,.1); border-radius: 12px; padding: 24px; }
 footer { text-align: center; margin-top: 80px; padding-top: 32px; border-top: 1px solid rgba(201,168,76,.1); font-size: .8rem; color: var(--muted); opacity: .6; }
+nav { position: relative; z-index: 2; display: flex; justify-content: center; gap: 32px; padding: 20px 0 0; } nav a { color: var(--muted); text-decoration: none; font-family: "Cinzel", serif; font-size: 0.8rem; letter-spacing: 0.2em; transition: color 0.2s; } nav a:hover { color: var(--gold); }nav { position: relative; z-index: 2; display: flex; justify-content: center; gap: 32px; padding: 20px 0 0; }
+nav a { color: var(--muted); text-decoration: none; font-family: Cinzel, serif; font-size: 0.8rem; letter-spacing: 0.2em; transition: color 0.2s; }
+nav a:hover { color: var(--gold); }
 </style>
 </head>
 <body>
 <canvas id="stars"></canvas>
+<nav><a href="/">HOME</a><a href="/gallery/">GALLERY</a><a href="/rants/">RANTS</a><a href="/about/">ABOUT</a></nav>
 <div class="container">
   <header>
     <div class="sigil">
