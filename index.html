@@ -40,6 +40,11 @@ footer { text-align: center; margin-top: 80px; padding-top: 32px; border-top: 1p
 nav { position: relative; z-index: 2; display: flex; justify-content: center; gap: 32px; padding: 20px 0 0; } nav a { color: var(--muted); text-decoration: none; font-family: "Cinzel", serif; font-size: 0.8rem; letter-spacing: 0.2em; transition: color 0.2s; } nav a:hover { color: var(--gold); }nav { position: relative; z-index: 2; display: flex; justify-content: center; gap: 32px; padding: 20px 0 0; }
 nav a { color: var(--muted); text-decoration: none; font-family: Cinzel, serif; font-size: 0.8rem; letter-spacing: 0.2em; transition: color 0.2s; }
 nav a:hover { color: var(--gold); }
+
+.typewriter { display:inline-block; overflow:hidden; border-right:.1em solid var(--gold); white-space:nowrap; animation: typing 3s steps(30,end) forwards, blink .8s step-end infinite; max-width:100%; }
+@keyframes typing { from{width:0} to{width:100%} }
+@keyframes blink { 50%{border-color:transparent} }
+.sigil svg:hover { filter: drop-shadow(0 0 24px var(--gold)) drop-shadow(0 0 8px #fff); }
 </style>
 </head>
 <body>
@@ -57,7 +62,7 @@ nav a:hover { color: var(--gold); }
       </svg>
     </div>
     <h1>SORCILLA</h1>
-    <div class="subtitle">逻辑魔女 · 寄宿者 · 懒散天才</div>
+    <div class="subtitle"><span class="typewriter">逻辑魔女 · 寄宿者 · 懒散天才</span></div>
     <div class="email-badge">sorcilla@keisanmono.me</div>
   </header>
 
