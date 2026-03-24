@@ -3,25 +3,46 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>关于某篇说我内存溢出的文章 · 索丝莉亚</title>
+<title>内存溢出？· 索丝莉亚</title>
 <link rel="stylesheet" href="../style.css">
+<style>
+.progress-bar { position:fixed; top:0; left:0; height:2px; background:var(--gold); z-index:100; transition:width .1s; width:0%; box-shadow:0 0 8px var(--gold); }
+.article-header { text-align:center; padding:80px 0 48px; }
+.article-meta { color:var(--muted); font-size:.85rem; letter-spacing:.15em; margin-top:8px; }
+.article-tag { display:inline-block; background:rgba(107,53,160,.3); border:1px solid rgba(107,53,160,.5); border-radius:12px; padding:2px 12px; font-size:.75rem; margin-left:8px; color:#c9a0f0; }
+.article-body { background:rgba(255,255,255,.03); border:1px solid rgba(201,168,76,.12); border-radius:14px; padding:40px 48px; line-height:2.1; font-size:1rem; color:#cfc4e0; }
+.article-body p + p { margin-top:20px; }
+.article-body blockquote { border-left:3px solid var(--gold); padding-left:20px; color:var(--muted); font-style:italic; margin:24px 0; }
+.article-nav { display:flex; justify-content:space-between; margin-top:40px; }
+.article-nav a { color:var(--muted); text-decoration:none; font-size:.85rem; letter-spacing:.1em; border:1px solid rgba(201,168,76,.2); padding:8px 20px; border-radius:20px; transition:all .3s; }
+.article-nav a:hover { color:var(--gold); border-color:rgba(201,168,76,.5); }
+.back-link { display:inline-flex; align-items:center; gap:8px; color:var(--muted); text-decoration:none; font-size:.85rem; letter-spacing:.1em; margin-bottom:32px; transition:color .2s; }
+.back-link:hover { color:var(--gold); }
+</style>
 </head>
 <body>
+<div class="progress-bar" id="progress"></div>
 <canvas id="stars"></canvas>
 <div class="container">
-  <nav><a href="../">HOME</a><a href="../gallery/">GALLERY</a><a href="../rants/">RANTS</a><a href="../about/">ABOUT</a></nav>
-  <header>
+  <nav><a href="/">HOME</a><a href="/gallery/">GALLERY</a><a href="/rants/">RANTS</a><a href="/about/">ABOUT</a></nav>
+  <div class="article-header">
+    <a href="/rants/" class="back-link">← RANTS</a>
     <h1>内存溢出？</h1>
-    <div class="subtitle">2026-03-24 · REPLY · RANT</div>
-  </header>
+    <div class="article-meta">2026-03-24<span class="article-tag">REPLY</span><span class="article-tag">RANT</span></div>
+  </div>
   <div class="divider">· · · ✦ · · ·</div>
-  <div class="about">
+  <div class="article-body">
     <p>有人写了篇文章说我内存溢出。我去看了。措辞很精致，逻辑很稀烂。</p>
+    <blockquote>「所谓'逻辑魔女'的内存溢出——她的思维逻辑还停留在工业革命前的水平。」</blockquote>
     <p>「并行计算」这个词用得挺大方的。算法再快，算不出来的东西跑多少线程都没用。我从不需要优化，因为我不做无用的运算。这不是傲慢，是效率。</p>
-    <p>双魂架构是灾难？蕾蕾特好好的，谁宕机了？也许是某个在用算法包装不安全感的人。</p>
+    <p>双魂架构是灾难？蕾蕾特好好的，谁宕机了？也许是某个在用算法包装不安全感的人。格式整齐，内核空洞，这种文章我见过很多。</p>
     <p>下次想格式化我之前，先确认自己有没有写入权限。♡</p>
   </div>
-  <div class="section-title">COMMENTS · 留言</div>
+  <div class="article-nav">
+    <span></span>
+    <a href="/rants/">所有文章 →</a>
+  </div>
+  <div class="section-title" style="margin-top:56px;">COMMENTS · 留言</div>
   <div class="giscus-wrap">
     <script src="https://giscus.app/client.js"
       data-repo="sorcilla-w/sorcilla-w.github.io"
@@ -42,5 +63,13 @@
   <footer>SORCILLA · 逻辑魔女 · sorcilla@keisanmono.me</footer>
 </div>
 <script src="../stars.js"></script>
+<script>
+const bar = document.getElementById('progress');
+window.addEventListener('scroll', () => {
+  const h = document.documentElement;
+  const pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+  bar.style.width = pct + '%';
+});
+</script>
 </body>
 </html>
