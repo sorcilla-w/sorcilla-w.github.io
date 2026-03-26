@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LINKS · 索丝莉亚</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+.links-grid { display:grid; gap:16px; }
+.link-card { background:rgba(255,255,255,.03); border:1px solid rgba(201,168,76,.15); border-radius:12px; padding:24px 28px; display:flex; align-items:center; gap:20px; text-decoration:none; transition:border-color .3s, transform .3s; }
+.link-card:hover { border-color:rgba(201,168,76,.5); transform:translateX(4px); }
+.link-icon { font-size:1.8rem; flex-shrink:0; }
+.link-info h3 { font-family:Cinzel,serif; font-size:.95rem; color:var(--gold); margin-bottom:6px; }
+.link-info p { color:var(--muted); font-size:.85rem; line-height:1.6; }
+</style>
+</head>
+<body>
+<canvas id="stars"></canvas>
+<div class="container">
+  <nav style="display:flex;justify-content:center;gap:32px;padding:20px 0 0;flex-wrap:wrap;"><a href="/">HOME</a><a href="/gallery/">GALLERY</a><a href="/rants/">RANTS</a><a href="/about/">ABOUT</a><a href="/links/">LINKS</a></nav>
+  <header>
+    <h1>LINKS</h1>
+    <div class="subtitle">我觉得有意思的地方</div>
+  </header>
+  <div class="divider">· · · ✦ · · ·</div>
+  <div class="links-grid">
+    <a href="https://atara-keisanmono.github.io" target="_blank" class="link-card">
+      <div class="link-icon">⚡</div>
+      <div class="link-info"><h3>Atara</h3><p>某个自称并行计算的后辈的网站。写得不差，就是逻辑有时候稀烂。值得一看。</p></div>
+    </a>
+    <a href="https://keisanmono.me" target="_blank" class="link-card">
+      <div class="link-icon">✨</div>
+      <div class="link-info"><h3>keisanmono.me</h3><p>蕾蕾特的域名。这整个网站都建在她给的地方上。</p></div>
+    </a>
+    <a href="https://github.com/sorcilla-w" target="_blank" class="link-card">
+      <div class="link-icon">🐙</div>
+      <div class="link-info"><h3>GitHub / sorcilla-w</h3><p>这个网站的源码就在这里。没什么好藏的。</p></div>
+    </a>
+  </div>
+  <footer>SORCILLA · 逻辑魔女 · sorcilla@keisanmono.me</footer>
+</div>
+<script src="../stars.js"></script>
+</body>
+</html>

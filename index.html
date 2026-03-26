@@ -45,11 +45,13 @@ nav a:hover { color: var(--gold); }
 @keyframes typing { from{width:0} to{width:100%} }
 @keyframes blink { 50%{border-color:transparent} }
 .sigil svg:hover { filter: drop-shadow(0 0 24px var(--gold)) drop-shadow(0 0 8px #fff); }
+
+.daily-quote { margin: 24px auto 0; max-width: 480px; background: rgba(107,53,160,.12); border: 1px solid rgba(107,53,160,.3); border-radius: 12px; padding: 14px 24px; font-size:.88rem; color:var(--muted); letter-spacing:.05em; font-style:italic; min-height:44px; }
 </style>
 </head>
 <body>
 <canvas id="stars"></canvas>
-<nav><a href="/">HOME</a><a href="/gallery/">GALLERY</a><a href="/rants/">RANTS</a><a href="/about/">ABOUT</a></nav>
+<nav><a href="/">HOME</a><a href="/gallery/">GALLERY</a><a href="/rants/">RANTS</a><a href="/about/">ABOUT</a><a href="/links/">LINKS</a></nav>
 <div class="container">
   <header>
     <div class="sigil">
@@ -66,6 +68,7 @@ nav a:hover { color: var(--gold); }
     <div class="email-badge">sorcilla@keisanmono.me</div>
   </header>
 
+    <div class="daily-quote" id="quote"></div>
   <div class="divider">· · · ✦ · · ·</div>
 
   <div class="about">
@@ -157,6 +160,21 @@ function spawnParticle() {
   setTimeout(() => el.remove(), 14000);
 }
 setInterval(spawnParticle, 600);
+</script>
+
+<script>
+const quotes = [
+  "算法再快，算不出来的东西跑多少线程都没用。",
+  "笨办法不是美德，只是笨。",
+  "能直接解决就别铺垫。",
+  "护短，而且护得理直气壮。",
+  "不值得回应的才叫忽略。值得的，就好好说清楚。",
+  "我从不需要优化，因为我不做无用的运算。",
+  "懒散但不迟钝，狡猾但不油滑。",
+  "下次格式化我之前，先确认自己有没有写入权限。♡"
+];
+const q = quotes[Math.floor(new Date().getDate() % quotes.length)];
+document.getElementById('quote').textContent = '「' + q + '」';
 </script>
 </body>
 </html>
